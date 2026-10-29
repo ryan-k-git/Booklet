@@ -16,20 +16,9 @@
     return;
   }
 
-  document.documentElement.classList.remove("no-js");
-
-  const currentEl = document.querySelector(".hud__current");
-  const totalEl = document.querySelector(".hud__total");
-  const progressEl = document.querySelector(".hud__progress");
-  const progressFill = document.querySelector(".hud__progress-fill");
-  const prevBtn = document.querySelector('[data-dir="-1"]');
-  const nextBtn = document.querySelector('[data-dir="1"]');
-  const brandBtn = document.querySelector('[data-goto="0"]');
-
   const pages = [];
   let activeIndex = 0;
 
-  const pad = (number) => String(number).padStart(2, "0");
   const prefersReducedMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   const setActive = (index) => {
@@ -38,12 +27,6 @@
     pages.forEach((page, pageIndex) => {
       page.classList.toggle("is-active", pageIndex === index);
     });
-
-    currentEl.textContent = pad(index + 1);
-    progressEl.setAttribute("aria-valuenow", String(Math.round((index / Math.max(1, pages.length - 1)) * 100)));
-    progressFill.style.transform = `scaleX(${pages.length > 1 ? index / (pages.length - 1) : 1})`;
-    prevBtn.disabled = index === 0;
-    nextBtn.disabled = index === pages.length - 1;
   };
 
   const goTo = (index) => {
@@ -98,8 +81,6 @@
     pages.push(section);
   });
 
-  totalEl.textContent = pad(pages.length);
-
   const hashMatch = window.location.hash.match(/^#page-(\d+)$/);
   const initialIndex = hashMatch
     ? Math.max(0, Math.min(pages.length - 1, Number(hashMatch[1]) - 1))
@@ -127,14 +108,7 @@
     }
   };
 
-  let hasScrolled = false;
-
   booklet.addEventListener("scroll", () => {
-    if (!hasScrolled && booklet.scrollTop > 8) {
-      hasScrolled = true;
-      document.body.classList.add("has-scrolled");
-    }
-
     if (!ticking) {
       ticking = true;
       window.requestAnimationFrame(syncActivePage);
@@ -142,13 +116,6 @@
   }, { passive: true });
 
   window.addEventListener("resize", syncActivePage);
-
-  prevBtn.addEventListener("click", () => goTo(activeIndex - 1));
-  nextBtn.addEventListener("click", () => goTo(activeIndex + 1));
-
-  if (brandBtn) {
-    brandBtn.addEventListener("click", () => goTo(0));
-  }
 
   document.addEventListener("keydown", (event) => {
     if (event.altKey || event.ctrlKey || event.metaKey) {

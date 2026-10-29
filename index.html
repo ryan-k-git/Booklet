@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
@@ -14,14 +14,6 @@
   <meta property="og:image" content="pages/0.png">
   <meta property="og:image:alt" content="Swallowtail official programme cover">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
-  <noscript>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap">
-  </noscript>
-
   <link rel="stylesheet" href="css/style.css">
 
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -32,59 +24,7 @@
 </head>
 
 <body>
-  <a class="skip-link" href="#booklet">Skip to programme</a>
-
-  <div class="ambient" aria-hidden="true"></div>
-
-  <header class="masthead">
-    <button class="brand" type="button" data-goto="0" aria-label="Back to the cover">
-      <span class="brand__name">Swallowtail</span>
-      <span class="brand__label">Official Programme</span>
-    </button>
-
-    <p class="masthead__meta">
-      <span>31 Oct 2026</span>
-      <span class="masthead__dot" aria-hidden="true"></span>
-      <span>7pm</span>
-    </p>
-  </header>
-
-  <main class="booklet" id="booklet" tabindex="-1" aria-label="Programme booklet">
-    <noscript>
-      <p class="booklet__noscript">
-        This interactive programme needs JavaScript.
-        <a href="pages/0.png">Open the cover</a>.
-      </p>
-    </noscript>
-  </main>
-
-  <footer class="hud">
-    <div class="hud__row">
-      <button class="nav" type="button" data-dir="-1" aria-label="Previous page" disabled>
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M5 15l7-7 7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
-
-      <p class="hud__count" aria-live="polite" aria-atomic="true">
-        <span class="hud__current">01</span>
-        <span class="hud__sep" aria-hidden="true"></span>
-        <span class="hud__total">02</span>
-      </p>
-
-      <button class="nav" type="button" data-dir="1" aria-label="Next page">
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M5 9l7 7 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
-    </div>
-
-    <p class="hud__hint" aria-hidden="true">Scroll to turn the page</p>
-
-    <div class="hud__progress" role="progressbar" aria-label="Reading progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-      <span class="hud__progress-fill"></span>
-    </div>
-  </footer>
+  <main class="booklet" id="booklet" aria-label="Programme booklet"></main>
 
   <script src="js/app.js"></script>
 </body>
