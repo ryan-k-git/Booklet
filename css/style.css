@@ -137,6 +137,18 @@ body {
   outline: none;
 }
 
+.booklet__status {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  margin: 0;
+  padding: var(--gutter);
+  color: rgba(200, 165, 90, 0.8);
+  font-family: Georgia, "Times New Roman", serif;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
 .page {
   display: grid;
   place-items: center;
