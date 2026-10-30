@@ -1,0 +1,5 @@
+# Never upload dependencies or repository metadata as static assets.
+node_modules/
+.git/
+.wrangler/
+.idea/
