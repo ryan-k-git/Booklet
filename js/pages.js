@@ -18,5 +18,4 @@ window.BOOKLET_PAGES = [
   "pages/16.png",
   "pages/17.png",
   "pages/18.png",
-  "pages/19.png"
 ];
